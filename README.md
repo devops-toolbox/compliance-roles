@@ -8,10 +8,10 @@ compliance-roles: Compliance-roles
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.compliance-roles](https://galaxy.ansible.com/devops-toolbox.compliance-roles)
+[https://galaxy.ansible.com/devopstoolbox.compliance-roles](https://galaxy.ansible.com/devopstoolbox.compliance-roles)
 
 ```bash
-ansible-galaxy install devops-toolbox.compliance-roles
+ansible-galaxy install devopstoolbox.compliance-roles
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: compliance-roles is configured
       import_role:
-        name: devops-toolbox.compliance-roles
+        name: devopstoolbox.compliance-roles
       vars:
         compliance-roles_packages_state: present
         compliance-roles_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
