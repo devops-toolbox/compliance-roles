@@ -1,0 +1,13 @@
+---
+# Template configuration files for compliance-roles
+
+- name: Set SELinux booleans
+  seboolean:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    persistent: "{{ item.persistent | default('false') }}"
+  loop: "{{ compliance-roles_selinux_booleans }}"
+  when:
+    - ansible_selinux.status == "enabled"
+    - compliance-roles_enable_selinux
+  become: true

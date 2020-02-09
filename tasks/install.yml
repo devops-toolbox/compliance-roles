@@ -1,0 +1,27 @@
+---
+# Install compliance-roles packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ compliance-roles_packages_remove }}"
+    state: absent
+  become: true
+  when: compliance-roles_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ compliance-roles_packages_repos }}"
+    state: "{{ compliance-roles_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ compliance-roles_packages_prereq }}"
+    state: "{{ compliance-roles_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ compliance-roles_packages_install }}"
+    state: "{{ compliance-roles_packages_state }}"
+  become: true

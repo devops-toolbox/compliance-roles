@@ -1,0 +1,19 @@
+---
+# defaults file for compliance-roles
+
+compliance-roles_packages_state: present
+compliance-roles_remove_packages: true
+compliance-roles_enable_service: true
+compliance-roles_enable_selinux: true
+compliance-roles_copy_templates: true
+compliance-roles_firewall_configure: true
+compliance-roles_firewall_rules:
+  - service: ssh
+  - port: 3389
+compliance-roles_users:
+  - user: devops
+    group: docker
+compliance-roles_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true
